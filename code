@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RankRizers Entrepreneurship Summit 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 150px 2rem 100px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .event-date {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: -50px auto 0;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 1rem auto;
+        }
+
+        /* About Section */
+        .about-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Benefits Grid */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .benefit-card p {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Speakers Section */
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .speaker-card {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .speaker-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .speaker-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .speaker-title {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Agenda Section */
+        .agenda-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .tab-button {
+            padding: 1rem 2rem;
+            background: white;
+            border: 2px solid #667eea;
+            color: #667eea;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .tab-button.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .agenda-content {
+            display: none;
+        }
+
+        .agenda-content.active {
+            display: block;
+        }
+
+        .agenda-item {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .agenda-info {
+            flex: 1;
+        }
+
+        .agenda-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .agenda-speaker {
+            color: #667eea;
+            font-weight: 500;
+        }
+
+        .agenda-time {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        /* Pricing Section */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .pricing-card.featured {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px) scale(1.02);
+        }
+
+        .pricing-badge {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-header h3 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #eee;
+            color: #555;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .pricing-button {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .pricing-button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Exhibition Section */
+        .exhibition-venue {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .venue-name {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .venue-address {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        /* Partners Section */
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .partner-card {
+            width: 100%;
+            height: 120px;
+            background: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            padding: 1rem;
+            text-align: center;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .partner-card:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 2rem 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.7;
+        }
+
+        .copyright {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.8;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 60px;
+                flex-direction: column;
+                background: #667eea;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                padding: 2rem 0;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .stats {
+                margin-top: 0;
+            }
+
+            .agenda-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            animation: fadeIn 0.3s;
+        }
+
+        .modal-content {
+            background: white;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 15px;
+            max-width: 500px;
+            position: relative;
+            animation: slideIn 0.3s;
+        }
+
+        .close-modal {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #999;
+        }
+
+        .close-modal:hover {
+            color: #333;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .submit-button:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">RankRizers Summit 2026</div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#speakers">Speakers</a></li>
+                <li><a href="#agenda">Agenda</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#partners">Partners</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>RankRizers Entrepreneurship Summit</h1>
+        <p class="subtitle">2026 First Edition</p>
+        <div class="event-date">
+            📅 March 27-28, 2026 | 📍 Travancore International Convention Centre
+        </div>
+        <br><br>
+        <a href="#pricing" class="cta-button">Register Now</a>
+    </section>
+
+    <!-- Stats Section -->
+    <div class="stats">
+        <div class="stat-card">
+            <div class="stat-number">5,000+</div>
+            <div class="stat-label">Expected Footfall</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Expert Speakers</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">20+</div>
+            <div class="stat-label">Agenda Tracks</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">80+</div>
+            <div class="stat-label">Exhibitors</div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About the Event</h2>
+        <div class="about-content">
+            <p>This event brings together innovators, creators, and changemakers for a day of meaningful conversations, learning, and collaboration. Designed to spark ideas and build real connections, the program features expert-led sessions, interactive discussions, and networking opportunities that empower participants to grow, adapt, and lead with purpose.</p>
+            <br>
+            <p>More than just a gathering, this event is a space where ideas are born, perspectives are challenged, and connections turn into collaborations. It's crafted for those who believe in growth, creativity, and building something meaningful together.</p>
+        </div>
+
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <h3>Learn from the Best</h3>
+                <p>Gain insights directly from industry leaders, successful entrepreneurs, and innovators who are shaping the future of business. Walk away with practical knowledge, real-world strategies, and fresh perspectives you can apply immediately.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Build Meaningful Connections</h3>
+                <p>Connect with founders, investors, and decision-makers from across industries. This is a space designed for high-impact networking where conversations lead to collaborations, partnerships, and new opportunities.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Stay Ahead of What's Next</h3>
+                <p>Explore emerging trends, cutting-edge technologies, and AI-driven business models that are transforming industries. Stay future-ready by understanding what's coming and how to prepare for it.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speakers Section -->
+    <section id="speakers">
+        <h2 class="section-title">Featured Speakers</h2>
+        <div class="speakers-grid">
+            <div class="speaker-card">
+                <div class="speaker-image">RM</div>
+                <div class="speaker-name">Rohit Malhotra</div>
+                <div class="speaker-title">Tech Entrepreneur & Angel Investor</div>
+            </div>
+            <div class="speaker-card">
+                <div class="speaker-image">MK</div>
+                <div class="speaker-name">Meera Kapoor</div>
+                <div class="speaker-title">Venture Capital Partner</div>
+            </div>
+            <div class="speaker-card">
+                <div class="speaker-image">AV</div>
+                <div class="speaker-name">Arjun Verma</div>
+                <div class="speaker-title">Business Leader & Growth Advisor</div>
+            </div>
+            <div class="speaker-card">
+                <div class="speaker-image">AR</div>
+                <div class="speaker-name">Ananya Rao</div>
+                <div class="speaker-title">Startup Founder & AI Strategist</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agenda Section -->
+    <section id="agenda">
+        <h2 class="section-title">What's on the Agenda?</h2>
+        
+        <div class="agenda-tabs">
+            <button class="tab-button active" onclick="showAgenda('day1')">March 27, 2026</button>
+            <button class="tab-button" onclick="showAgenda('day2')">March 28, 2026</button>
+        </div>
+
+        <div id="day1" class="agenda-content active">
+            <div class="agenda-item">
+                <div class="agenda-info">
+                    <div class="agenda-title">Agenda One</div>
+                    <div class="agenda-speaker">Aami Rhea - Actor & Co-founder, Ketto</div>
+                </div>
+                <div class="agenda-time">10:00 AM</div>
+            </div>
+            <div class="agenda-item">
+                <div class="agenda-info">
+                    <div class="agenda-title">Agenda Two</div>
+                    <div class="agenda-speaker">Nila Aarohi - Vice Chairperson, Tally Solutions</div>
+                </div>
+                <div class="agenda-time">11:30 AM</div>
+            </div>
+            <div class="agenda-item">
+                <div class="agenda-info">
+                    <div class="agenda-title">Agenda Three</div>
+                    <div class="agenda-speaker">Chris Benoid - Managing Director, Tally Solutions</div>
+                </div>
+                <div class="agenda-time">2:00 PM</div>
+            </div>
+        </div>
+
+        <div id="day2" class="agenda-content">
+            <div class="agenda-item">
+                <div class="agenda-info">
+                    <div class="agenda-title">Agenda Four</div>
+                    <div class="agenda-speaker">Nila Aarohi & Chris Benoid</div>
+                </div>
+                <div class="agenda-time">10:00 AM</div>
+            </div>
+            <div class="agenda-item">
+                <div class="agenda-info">
+                    <div class="agenda-title">Agenda Five</div>
+                    <div class="agenda-speaker">Aami Rhea - Actor & Co-founder, Ketto</div>
+                </div>
+                <div class="agenda-time">12:00 PM</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing">
+        <h2 class="section-title">Pricing Plans</h2>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="pricing-badge">Early Bird - First 100</div>
+                <div class="pricing-header">
+                    <h3>Gold Pass</h3>
+                </div>
+                <div class="pricing-price">₹4,999</div>
+                <ul class="pricing-features">
+                    <li>Full Access to the Summit</li>
+                    <li>India Digital Awards Evening</li>
+                    <li>Exhibition Zone Access</li>
+                    <li>Networking Opportunities</li>
+                </ul>
+                <button class="pricing-button" onclick="openRegistration('Gold Early Bird')">Register Now</button>
+            </div>
+
+            <div class="pricing-card featured">
+                <div class="pricing-header">
+                    <h3>Gold Pass</h3>
+                </div>
+                <div class="pricing-price">₹5,999</div>
+                <ul class="pricing-features">
+                    <li>Full Access to the Summit</li>
+                    <li>India Digital Awards Evening</li>
+                    <li>Exhibition Zone Access</li>
+                    <li>Networking Opportunities</li>
+                    <li>Premium Seating</li>
+                </ul>
+                <button class="pricing-button" onclick="openRegistration('Gold Pass')">Register Now</button>
+            </div>
+
+            <div class="pricing-card">
+                <div class="pricing-badge">VIP - First 50</div>
+                <div class="pricing-header">
+                    <h3>Diamond Pass</h3>
+                </div>
+                <div class="pricing-price">₹24,999</div>
+                <ul class="pricing-features">
+                    <li>Full Access to the Summit</li>
+                    <li>RankRizers Prime+ Membership</li>
+                    <li>VIP Lounge Access</li>
+                    <li>India Digital Awards Evening</li>
+                    <li>Exhibition Zone Access</li>
+                    <li>Meet & Greet with Speakers</li>
+                </ul>
+                <button class="pricing-button" onclick="openRegistration('Diamond Pass')">Register Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exhibition Section -->
+    <section id="exhibition">
+        <h2 class="section-title">Exhibition Venue</h2>
+        <div class="exhibition-venue">
+            <div class="venue-name">Travancore International Convention Centre</div>
+            <div class="venue-address">Kerala, India</div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partners">
+        <h2 class="section-title">Our Partners</h2>
+        <div class="partners-grid">
+            <div class="partner-card">Title Partners</div>
+            <div class="partner-card">Co-powered By</div>
+            <div class="partner-card">Associate Partners</div>
+            <div class="partner-card">Platinum Partners</div>
+            <div class="partner-card">Gold Partners</div>
+            <div class="partner-card">Silver Partners</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#speakers">Speakers</a>
+                <a href="#agenda">Agenda</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#partners">Partners</a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 RankRizers. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Registration Modal -->
+    <div id="registrationModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeRegistration()">&times;</span>
+            <h2 style="margin-bottom: 2rem; color: #667eea;">Event Registration</h2>
+            <form id="registrationForm" onsubmit="submitRegistration(event)">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="passType">Pass Type</label>
+                    <select id="passType" required>
+                        <option value="">Select Pass Type</option>
+                        <option value="Gold Early Bird">Gold Pass (Early Bird) - ₹4,999</option>
+                        <option value="Gold Pass">Gold Pass - ₹5,999</option>
+                        <option value="Diamond Pass">Diamond Pass - ₹24,999</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-button">Complete Registration</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        // Agenda Tab Switching
+        function showAgenda(day) {
+            // Hide all agenda contents
+            const contents = document.querySelectorAll('.agenda-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(button => button.classList.remove('active'));
+
+            // Show selected agenda and activate button
+            document.getElementById(day).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Registration Modal
+        function openRegistration(passType) {
+            const modal = document.getElementById('registrationModal');
+            const passTypeSelect = document.getElementById('passType');
+            modal.style.display = 'block';
+            passTypeSelect.value = passType;
+        }
+
+        function closeRegistration() {
+            const modal = document.getElementById('registrationModal');
+            modal.style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('registrationModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Form Submission
+        function submitRegistration(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const passType = document.getElementById('passType').value;
+
+            // Here you would typically send this data to a server
+            alert(`Registration Successful!\n\nName: ${name}\nEmail: ${email}\nPass Type: ${passType}\n\nYou will receive a confirmation email shortly.`);
+            
+            closeRegistration();
+            document.getElementById('registrationForm').reset();
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.querySelector('.nav-links').classList.remove('active');
+                }
+            });
+        });
+
+        // Add scroll animation for elements
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
